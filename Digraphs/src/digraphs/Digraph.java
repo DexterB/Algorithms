@@ -1,4 +1,4 @@
-package Digraphs;
+package digraphs;
 
 import java.util.ArrayList;
 
