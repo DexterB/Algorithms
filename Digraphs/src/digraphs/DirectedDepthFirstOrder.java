@@ -1,8 +1,9 @@
 package digraphs;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
-import sun.misc.Queue;
 
 /**
  * Depth first class which computes and tracks the visitation of nodes in the 
@@ -17,8 +18,8 @@ public class DirectedDepthFirstOrder {
 	private Stack<Integer> reversePost; // reverse post order visitation of vertices
 	
 	public DirectedDepthFirstOrder (Digraph G) {
-		pre = new Queue<Integer>();
-		post = new Queue<Integer>();
+		pre = new LinkedList<Integer>();
+		post = new LinkedList<Integer>();
 		reversePost = new Stack<Integer>();
 		
 		marked = new boolean [G.V()];
@@ -30,14 +31,14 @@ public class DirectedDepthFirstOrder {
 	}
 	
 	private void dfs(Digraph G, int v) {
-		pre.enqueue(v);
+		pre.add(v);
 		for (int w : G.adj(v)) {
 			if (!marked[w]) {
 				marked[w] = true;
 				dfs(G, w);
 			}
 		}
-		post.enqueue(v);
+		post.add(v);
 		reversePost.push(v);
 	}
 	

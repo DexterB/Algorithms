@@ -122,6 +122,11 @@ public class DirectedDFS {
         return R.marked(target);
     }
     
+    /**
+     * Iterable with the path to the vertex v.
+     * @param v
+     * @return
+     */
     public Iterable<Integer> pathTo (int v) {
     	if (!hasPathTo(v)){
     		// v is not reachable from the source. There is no path.
