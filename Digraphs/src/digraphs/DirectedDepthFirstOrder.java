@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-
 /**
  * Depth first class which computes and tracks the visitation of nodes in the 
  * digraph in depth-first order.
